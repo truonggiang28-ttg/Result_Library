@@ -14,7 +14,7 @@ class DetailActivity: AppCompatActivity() {
             result.data?.extras?.let {
                 bundle ->
                 binding.tvTenSach313.text = bundle.getString("key_TenSachMoi313")
-                binding.tvTienCoc313.text = bundle.getDouble("key_TenCocMoi313").toString()
+                binding.tvTienCoc313.text = bundle.getDouble("key_TienCocMoi313",0.0).toString()
                 binding.tvTenNguoi313.text = bundle.getString("key_TenNguoiMoi313")
             }
         }
@@ -41,11 +41,12 @@ class DetailActivity: AppCompatActivity() {
         binding.btnEdit.setOnClickListener {
             with(binding){
                 val intent = Intent(this@DetailActivity, ChinhSuaChiTietActivity::class.java).apply{
-                    putExtra("key_TenSach313",tvTenSach313.text)
-                    putExtra("key_TienCoc313",tvTienCoc313.text)
-                    putExtra("key_TenNguoi313",tvTenNguoi313.text)
+                    putExtra("key_TenSach313",tvTenSach313.text.toString())
+                    putExtra("key_TienCoc313",tvTienCoc313.text.toString())
+                    putExtra("key_TenNguoi313",tvTenNguoi313.text.toString())
                 }
                 editLauncher.launch(intent)
+
             }
         }
         binding.btnBack.setOnClickListener {

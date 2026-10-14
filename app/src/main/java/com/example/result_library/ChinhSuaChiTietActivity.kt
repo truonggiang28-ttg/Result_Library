@@ -17,11 +17,11 @@ class ChinhSuaChiTietActivity: AppCompatActivity() {
             bundle ->
             with(binding){
                 val tenSachNow_313 = bundle.getString("key_TenSach313")
-                val tienCocNow_313 = bundle.getDouble("key_TienCoc313")
+                val tienCocNow_313 = bundle.getString("key_TienCoc313")
                 val TenNguoiNow_313 = bundle.getString("key_TenNguoi313")
 
                 edtTenSachSua313.setText(tenSachNow_313)
-                edtTienCocSua313.setText(tienCocNow_313.toString())
+                edtTienCocSua313.setText(tienCocNow_313)
                 edtTenNguoiSua313.setText(TenNguoiNow_313)
             }
         }
@@ -31,12 +31,14 @@ class ChinhSuaChiTietActivity: AppCompatActivity() {
                 val tienCocMoi_313 = edtTienCocSua313.text.toString()
                 val tenNguoiMoi_313 = edtTenNguoiSua313.text.toString()
 
+                val tienSo_313 = tienCocMoi_313.toDoubleOrNull()
                 val resultIntent = Intent().apply{
                     putExtra("key_TenSachMoi313", tenSachMoi_313)
-                    putExtra("key_TienCocMoi313",tienCocMoi_313)
+                    putExtra("key_TienCocMoi313",tienSo_313)
                     putExtra("key_TenNguoiMoi313", tenNguoiMoi_313)
                 }
                 setResult(Activity.RESULT_OK,resultIntent)
+                finish()
             }
         }
         binding.btnCancel.setOnClickListener {
