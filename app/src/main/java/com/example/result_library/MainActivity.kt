@@ -26,15 +26,14 @@ class MainActivity : AppCompatActivity() {
             val edtTenNguoi_313 = binding.edtTenNguoi313.text.toString().trim()
 
             val sotien = edtTien_313.toDoubleOrNull()
-            if(edtTenNguoi_313 == null || edtNameSach_313 == null || sotien == null){
+            if(edtTenNguoi_313.isEmpty() || edtNameSach_313.isEmpty() || sotien == null){
                 Toast.makeText(this@MainActivity,
                     "Du lieu khong the la null va rong", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
-
-                TenSach_313 = edtNameSach_313
-                TienCoc_313 = sotien
-                TenNguoi_313 = edtTenNguoi_313
             }
+            TenSach_313 = edtNameSach_313
+            TienCoc_313 = sotien
+            TenNguoi_313 = edtTenNguoi_313
         }
         binding.btnDetail.setOnClickListener {
             with(binding){
