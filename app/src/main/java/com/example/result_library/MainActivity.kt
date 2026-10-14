@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        supportActionBar?.title = "Thái Trường Giang MSV - Tên đề tài"
         binding.btnThem.setOnClickListener {
             val edtNameSach_313 = binding.edtTenSach313.text.toString().trim()
             val edtTien_313 = binding.edtTienCoc313.text.toString().trim()
