@@ -1,5 +1,6 @@
 package com.example.result_library
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -29,10 +30,21 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this@MainActivity,
                     "Du lieu khong the la null va rong", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
+
+                TenSach_313 = edtNameSach_313
+                TienCoc_313 = sotien
+                TenNguoi_313 = edtTenNguoi_313
             }
         }
         binding.btnDetail.setOnClickListener {
-
+            with(binding){
+                val intent = Intent(this@MainActivity, DetailActivity::class.java).apply{
+                    putExtra("key_TenSach313", TenSach_313)
+                    putExtra("key_SoTien313",TienCoc_313)
+                    putExtra("key_TenNguoi313",TenNguoi_313)
+                }
+                startActivity(intent)
+            }
         }
     }
 }
