@@ -7,7 +7,9 @@ android {
     compileSdk {
         version = release(37)
     }
-
+    buildFeatures{
+        viewBinding = true
+    }
     defaultConfig {
         applicationId = "com.example.result_library"
         minSdk = 24
