@@ -10,16 +10,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nhap ten sach moi"
+        android:padding="15dp"
         android:textSize="18sp"/>
     <EditText
         android:id="@+id/edtTienCocSua_313"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="15dp"
         android:hint="Nhap tien coc moi"
         android:textSize="18sp"/>
     <EditText
         android:id="@+id/edtTenNguoiSua_313"
         android:layout_width="match_parent"
+        android:padding="15dp"
+        android:layout_marginBottom="20dp"
         android:layout_height="wrap_content"
         android:hint="Nhap ten nguoi muon moi"
         android:textSize="18sp"/>
@@ -33,6 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Luu du lieu"
+            android:layout_marginRight="20dp"
             android:textSize="18sp"/>
         <Button
             android:id="@+id/btnCancel"
